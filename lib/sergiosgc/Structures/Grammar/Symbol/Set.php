@@ -1,7 +1,7 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-require_once('Structures/Grammar/Symbol.php');
-require_once('Structures/Grammar/Exception.php');
+namespace sergiosgc;
+
 /**
  * This is a simple class represeting a set of Structure_Grammar_Symbols. 
  *

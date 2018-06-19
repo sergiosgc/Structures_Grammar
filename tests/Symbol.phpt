@@ -2,10 +2,8 @@
 Create a Structures_Grammar_Symbol
 --FILE--
 <?php
-ini_set('include_path', realpath(dirname(__FILE__) . '/../') . ':' .
-                        ini_get('include_path'));
-require_once('Structures/Grammar/Symbol.php');
-$symbol = Structures_Grammar_Symbol::create('A');
+require_once(__DIR__ . '/../vendor/autoload.php');
+$symbol = \sergiosgc\Structures_Grammar_Symbol::create('A');
 print((string) $symbol);
 ?>
 --EXPECT--

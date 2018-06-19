@@ -1,6 +1,7 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-require_once('Structures/Grammar/Exception.php');
+namespace sergiosgc;
+
 /**
  * Structures_Grammar_Rule is a representation of a formal grammar rule according to Noah Chomsky. 
  *
@@ -78,8 +79,6 @@ class Structures_Grammar_Rule
      */
     public function addSymbolToLeft($value)
     {
-        require_once('Structures/Grammar/Symbol.php');
-
         if (!($value instanceof Structures_Grammar_Symbol)) $value = Structures_Grammar_Symbol::create((string) $value);
         $this->left[] = $value;
     }
@@ -110,8 +109,6 @@ class Structures_Grammar_Rule
      */
     public function addSymbolToRight($value)
     {
-        require_once('Structures/Grammar/Symbol.php');
-
         if (!($value instanceof Structures_Grammar_Symbol)) $value = Structures_Grammar_Symbol::create((string) $value);
         $this->right[] = $value;
     }

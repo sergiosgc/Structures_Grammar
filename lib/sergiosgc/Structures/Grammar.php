@@ -1,6 +1,7 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-require_once('Structures/Grammar/Exception.php');
+namespace sergiosgc;
+
 /**
  * Structures_Grammar is a representation of a formal generative grammar. The 
  * data structure represents grammars as proposed by Noam Chomsky, as:
@@ -102,7 +103,6 @@ class Structures_Grammar
      */
     public function getNonTerminalSymbolSet()
     {
-        require_once('Structures/Grammar/Symbol/Set.php');
         return new Structures_Grammar_Symbol_Set($this->getNonTerminals());
     }
     /* }}} */
@@ -153,7 +153,6 @@ class Structures_Grammar
      */
     public function getTerminalSymbolSet()
     {
-        require_once('Structures/Grammar/Symbol/Set.php');
         return new Structures_Grammar_Symbol_Set($this->getTerminals());
     }
     /* }}} */
@@ -175,8 +174,6 @@ class Structures_Grammar
     /* addContextFreeRule {{{ */
     public function &addContextFreeRule()
     {
-        require_once('Structures/Grammar/Symbol.php');
-        require_once('Structures/Grammar/Rule.php');
         $symbols = func_get_args();
         if (count($symbols) == 0) throw new Structures_Grammar_Exception('At least one symbol is needed in a context-free grammar rule');
         foreach($symbols as $i => $symbol) if (!($symbol instanceof Structures_Grammar_Symbol)) $symbols[$i] = Structures_Grammar_Symbol::create($symbol);
@@ -336,7 +333,6 @@ public function isContextFree()
     /* computeNullableSymbolSet {{{ */
     protected function computeNullableSymbolSet()
     {
-        require_once('Structures/Grammar/Symbol/Set.php');
         if (!$this->testContextFree()) throw new Structures_Grammar_Exception('isSymbolNullable is implemented for context-free grammars only, and this is not a context-free grammar');
         $this->nullableSymbolSet =  new Structures_Grammar_Symbol_Set();
         do {
@@ -357,7 +353,6 @@ public function isContextFree()
      */
     public function symbolFirstSet($symbol)
     {
-        require_once('Structures/Grammar/Symbol/Set.php');
         $result = new Structures_Grammar_Symbol_Set();
         if ($symbol->isTerminal()) {
             $result->addSymbol($symbol);
