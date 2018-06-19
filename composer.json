@@ -1,5 +1,5 @@
 {
-    "name": "sergiosgc/Structures Grammar",
+    "name": "sergiosgc/structures_grammar",
     "description": "Structures_Grammar is a data structure class used in defining formal grammars, as described by Noam Chomsky.",
     "keywords": ["text", "parser", "grammar" ],
     "type": "library",
