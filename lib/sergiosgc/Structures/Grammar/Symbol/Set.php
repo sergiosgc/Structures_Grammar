@@ -7,7 +7,7 @@ namespace sergiosgc;
  *
  * This is a glorified array of symbol sets, capable of typical set manipulation
  */
-class Structures_Grammar_Symbol_Set implements Iterator
+class Structures_Grammar_Symbol_Set implements \Iterator
 {
     /* Constructor {{{ */
     public function __construct($symbols = null)
